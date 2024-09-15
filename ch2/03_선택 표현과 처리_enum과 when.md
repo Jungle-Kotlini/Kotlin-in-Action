@@ -37,6 +37,41 @@ val enum = "이건 변수 이름입니다"
 
 
 ### 프로퍼티와 메소드가 있는 enum 클래스 선언하기 
+in java
+```java
+public enum Color {
+    RED(255, 0, 0),
+    ORANGE(255, 165, 0),
+    YELLOW(255, 255, 0),
+    GREEN(0, 255, 0),
+    BLUE(0, 0, 255),
+    INDIGO(75, 0, 130),
+    VIOLET(238, 130, 238);
+
+    // 프로퍼티
+    private final int r;
+    private final int g;
+    private final int b;
+
+    // 생성자
+    Color(int r, int g, int b) {
+        this.r = r;
+        this.g = g;
+        this.b = b;
+    }
+
+    // 메소드
+    public int rgb() {
+        return (r * 256 + g) * 256 + b;
+    }
+
+    public static void main(String[] args) {
+        // BLUE의 rgb 값을 출력
+        System.out.println(Color.BLUE.rgb()); // 출력: 255
+    }
+}
+```
+in kotlin
 ```kotlin
 enum class Color(val r: Int, val g: Int, val b: Int) { // 상수의 프로퍼티를 정의한다.
     RED(255, 0, 0),      // 각 상수를 생성할 때 그에 대한 프로퍼티 값을 지정
